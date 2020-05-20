@@ -1,0 +1,19 @@
+{
+  "name": "react_strippers_payment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebuyco/react_strippers_payment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebuyco/react_strippers_payment/issues"
+  },
+  "homepage": "https://github.com/ebuyco/react_strippers_payment#readme"
+}

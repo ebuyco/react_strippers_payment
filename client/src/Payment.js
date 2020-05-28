@@ -80,8 +80,57 @@ const Payments = () => {
             className="well"
             hidden={!paymentIntent || paymentIntent.status === 'succeeded' }
             >
-
+              <h3>Step 2: Submit a Payment Method</h3>
+              <p>Collect credit card details, then submit the payment. </p>  
+              <p>
+                 Normal Card: <code>4242424242424242424242</code>                 
+             </p>    
+             <p>
+                 3D Secure Card: <code>400000000025000031555</code>
+             </p>
+             <hr/>
+             <CardElement/>
+             <button
+              className="btn btn-success" 
+              type="submit"
+              >
+                Pay    
+             </button>
             </form>
-        </>
-    )
+       </>
+    );
 }
+
+
+function PaymentIntentData(props){
+    if (props.data){
+        const {id, amount, status, client_secret } = props.data;
+        return(
+            <>
+                <h3>
+                    Payment Intent
+                    <span 
+                    className={
+                        'badge' + (status === 'succeeded' ? 'badge-success' : 'badge-secondary')
+                    }
+                    >
+                        {status}
+                    </span>
+                    <pre>
+                        ID: {id} <br/>
+                        Client Secret: {client_secret} <br/>
+                        Amount: {amount} <br/>
+                        Status: {status}
+                        <br/>
+                    </pre>
+                </h3>
+            </>
+        );
+    } else {
+        return (
+            <p>Payment Intent Not Created Yet</p>
+        );
+    }
+}
+
+export default Payments;
